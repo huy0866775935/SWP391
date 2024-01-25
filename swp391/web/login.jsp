@@ -17,7 +17,7 @@
         <form action="login" method="post">
             <input type="text" name="username" value="" required></br>
             <input type="password" name="password" value="" required></br>
-            ${Fail}
+            ${fail}</br>
         <input type="submit" value="Login">
         </form>
         
