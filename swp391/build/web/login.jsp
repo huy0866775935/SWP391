@@ -18,6 +18,7 @@
             <input type="text" name="username" value="" required></br>
             <input type="password" name="password" value="" required></br>
             ${fail}</br>
+            <input type="checkbox" name ="remember" checked>Remember me!</br>
         <input type="submit" value="Login">
         </form>
         
