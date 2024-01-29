@@ -41,7 +41,7 @@
                     </div>
                     <div id="forgot-href">
                         <span>Forgot password?</span>
-                        <a href="forgot_password">Click here</a>
+                        <a href="forgot">Click here</a>
                     </div>
                 </form>
             </div>

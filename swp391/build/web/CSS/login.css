@@ -60,23 +60,35 @@ body{
 }
 .form-group{
     margin-top: 15px;
-    border-bottom: 1px solid white;
+/*    border-bottom: 1px solid white;*/
     
 }
 .form-group i{
     width: 16px;
     height: 16px;
-       transform: scale(1.5);
-       margin-right: 10px;
-       padding-top: 30px;
+    transform: scale(1.5);
+    margin-right: 10px;
+    padding-top: 30px;
+    
 }
 .form-input{
     background: transparent;
+    /*border-radius: 10px;*/
     border: 0;
     outline: 1px;
     height: 40px;
     width: 250px;
+    border-bottom: 1px solid white;
 }
+input[type="text"]:focus {
+  border-radius: 10px;
+  border: 2px solid blueviolet;
+}
+input[type="password"]:focus {
+  border-radius: 10px;
+  border: 2px solid blueviolet;
+}
+
 .form-input::placeholder{
     color: black;
 }
@@ -90,7 +102,7 @@ body{
     width: 150px;
     height: 30px;
     cursor: pointer;
-    
+    background-color: gray;
 }
 #login-button:hover{
     background-color: blueviolet !important;
