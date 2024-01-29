@@ -81,7 +81,7 @@ public class UserLogin extends HttpServlet {
         response.sendRedirect(HOME_PAGE);
     } else {
         request.setAttribute("fail", "Check your UseName or Password again");
-        response.sendRedirect(LOGIN_PAGE);
+        request.getRequestDispatcher(LOGIN_PAGE).forward(request, response);
     }
         
 
