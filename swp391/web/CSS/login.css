@@ -60,24 +60,25 @@ body{
 }
 .form-group{
     margin-top: 15px;
+    border-bottom: 1px solid white;
     
 }
 .form-group i{
     width: 16px;
     height: 16px;
-   
        transform: scale(1.5);
        margin-right: 10px;
+       padding-top: 30px;
 }
 .form-input{
-    /*background: transparent;*/
+    background: transparent;
     border: 0;
     outline: 1px;
     height: 40px;
     width: 250px;
 }
 .form-input::placeholder{
-    color: white;
+    color: black;
 }
 .form-submit{
     justify-content: center;

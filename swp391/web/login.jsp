@@ -21,11 +21,9 @@
             <div id="wrapper">
                 <form action="login" method="post" id="form-login">
                     <h1 id="form-heading">WELCOME TO WEBSITE!!</h1> 
-                    <div class="form-group">
-                        
+                    <div class="form-group">                        
                        <i class="fa-solid fa-user"></i>
-                       <input type="text" name="username" class="form-input" placeholder="Use Name" value="" required></br>
-                        
+                       <input type="text" name="username" class="form-input" placeholder="Use Name" value="" required></br>                        
                     </div>
                     <div class="form-group">
                         <i class="fa-solid fa-key"></i>
