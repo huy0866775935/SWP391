@@ -21,6 +21,12 @@ public class Account {
         this.Role = Role;
     }
 
+    public Account(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+    
+
     public String getID() {
         return ID;
     }

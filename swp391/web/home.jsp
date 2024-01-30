@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <a href="change_password">Change Password</a>
+        <a href="logout">Logout</a>
     </body>
 </html>

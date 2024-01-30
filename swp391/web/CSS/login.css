@@ -7,19 +7,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     Author     : huy08
 */
 body{
-    background: url('../img/bg.jpg');
+    /*    background: url('../img/bg.jpg');*/
+    background-color: gray;
     background-size: cover;
     background-position-y:-10px;
 }
 #login-username{
     display: inline-block;
-   width: 30px;
-   height: 30px;
-    
+    width: 30px;
+    height: 30px;
     background: url('../img/user-profile.png');
 }
 #login-password::before{
-    
     background: url('../img/key.png');
 }
 
@@ -45,12 +44,13 @@ body{
     justify-content: center;
     align-content: center;
     flex-direction: column;
+    border-radius: 10px;
 }
 #form-heading{
     text-align: center;
     color: black;
-    font-size: 25px;
-    margin-bottom: 20px;
+    /*font-size: 25px;*/
+    margin-bottom: 0px;
     font-family: sans-serif;
 }
 .container{
@@ -60,8 +60,8 @@ body{
 }
 .form-group{
     margin-top: 15px;
-/*    border-bottom: 1px solid white;*/
-    
+    /*    border-bottom: 1px solid white;*/
+
 }
 .form-group i{
     width: 16px;
@@ -69,24 +69,24 @@ body{
     transform: scale(1.5);
     margin-right: 10px;
     padding-top: 30px;
-    
+
 }
-.form-input{
+.form-input {
     background: transparent;
-    /*border-radius: 10px;*/
+    /* border-radius: 10px; */
     border: 0;
     outline: 1px;
-    height: 40px;
+    height: 31px;
     width: 250px;
     border-bottom: 1px solid white;
 }
 input[type="text"]:focus {
-  border-radius: 10px;
-  border: 2px solid blueviolet;
+    border-radius: 10px;
+    border: 2px solid blueviolet;
 }
 input[type="password"]:focus {
-  border-radius: 10px;
-  border: 2px solid blueviolet;
+    border-radius: 10px;
+    border: 2px solid blueviolet;
 }
 
 .form-input::placeholder{
@@ -108,9 +108,32 @@ input[type="password"]:focus {
     background-color: blueviolet !important;
     color: white;
 }
+::placeholder {    
+    opacity: 0.7; /* Độ mờ từ 0 đến 1 */
+  }
+#email-icon {
+/*    width: 100px;
+    height: 100px;*/
+    transition: transform 0.3s; /* Thời gian chuyển đổi */
+    cursor: pointer;
+  }  
+  #email-icon:hover{
+          transform: scale(1.2); /* Phóng to icon lên 1.2 lần */
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
 #check-remember{
     align-self: flex-end;
     margin-top: 10px;
     margin-bottom: 20px;
     /*margin-right: 30px;*/
+}
+#box{
+    cursor: pointer;
+}
+#forgot-href{
+    margin-top: 10px;
 }

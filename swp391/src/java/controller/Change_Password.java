@@ -5,12 +5,15 @@
 
 package controller;
 
+import dal.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import model.Account;
 
 /**
  *
@@ -53,7 +56,10 @@ public class Change_Password extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+        HttpSession session =  request.getSession();
+        Account acc = (Account) session.getAttribute("account");
+        request.setAttribute("username", acc.getUsername());
+        request.getRequestDispatcher("change_password.jsp").forward(request, response);
     } 
 
     /** 
@@ -66,7 +72,26 @@ public class Change_Password extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+        String username = request.getParameter("username");
+        String old_Password = request.getParameter("old_Password");
+        String new_Password = request.getParameter("new_Password");
+        String cf_Password = request.getParameter("cf_Password");
+        AccountDAO dao=new AccountDAO();
+        boolean checked = dao.checkUser(username, old_Password);
+        if(!checked){
+            request.setAttribute("username",username);
+            request.setAttribute("fail", "Sai mật khẩu!");
+            request.getRequestDispatcher("change_password.jsp").forward(request, response);
+
+        }
+        if(!new_Password.equals(cf_Password)){
+            request.setAttribute("username", username);
+            request.setAttribute("fail", "Nhập lại mật khẩu mới!");
+            request.getRequestDispatcher("change_password.jsp").forward(request, response);
+
+        }
+        
+        
     }
 
     /** 

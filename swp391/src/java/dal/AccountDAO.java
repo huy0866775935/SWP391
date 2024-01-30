@@ -13,8 +13,8 @@ import model.Account;
  *
  * @author huy08
  */
-public class AccountDAO extends DBContext{
-    
+public class AccountDAO extends DBContext {
+
     public boolean checkUser(String username, String password) {
         String sql = "Select * from [dbo].[Account] where UserName = ? and Password = ?";
         try {
@@ -22,7 +22,7 @@ public class AccountDAO extends DBContext{
             st.setString(1, username);
             st.setString(2, password);
             ResultSet rs = st.executeQuery();
-            if (rs.next()) {               
+            if (rs.next()) {
                 return true;
             }
         } catch (SQLException e) {
@@ -30,5 +30,24 @@ public class AccountDAO extends DBContext{
         }
         return false;
     }
-    
+
+    public boolean changePassword(String username, String password) {
+        String sql = "UPDATE Account\n"
+                + "SET Password = ?\n"
+                + "WHERE UserName = ?;";
+        try {
+            PreparedStatement st = connection.prepareCall(sql);
+            st.setString(1, password);
+            st.setString(2, username);
+            ResultSet rs = st.executeQuery();
+            st.executeUpdate();
+            if (rs.next()) {
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return false;
+    }
+
 }

@@ -18,33 +18,40 @@
         <!-- Google Fonts  -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="CSS/forgot_password.css"/>
+        <link rel="stylesheet" href="CSS/style.css"/>
+        <link rel="stylesheet" href="CSS/forgot_password2.css"/>
 
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
         <title>Forgot Password UI Using CSS - @code.scientist x @codingtorque</title>
     </head>
-    <body>
-        <div class="container">
-            <div class="wrapper">
-                <div class="card">
-            <p class="lock-icon">
-                <i class="fas fa-lock"></i>
-            </p>
-            <h2>Forgot Password?</h2>
-            <p>You can reset your Password here</p>
-            <input type="text" class="passInput" placeholder="Email address">
-            <div class="input">
-                <button class="bt">Send My Password</button>
-                <button class="bt">Back To Login</button>
-            </div>
-
-            <div class="note">If you don’t recive new password, please try again after 20 seconds</div>
-        </div>
+        <body>
+            <div class="container">
+                
+                <div class="wrapper">
+                     <p class="lock-icon">
+                    <i class="fas fa-lock"></i>
+                </p>
+                <h2>Forgot Password?</h2>
+                <p>You can reset your Password here</p>
+                <div class="input-email">
+                    <input type="text" class="passInput" placeholder="Email address">
+                </div>
+                
+                <div class="input">
+                    <button class="bt"><a href="">Send My Password</a></button>
+                    <button class="bt"><a href="login">Back To Login</a></button>
+                </div>
+                </div>
+               
+    
+                <div class="note">If you don’t recive new password, please try again after 20 seconds</div>
+            
+                
+                
             </div>
             
-        </div>
-        
-    </body>
+        </body>
+
 </html>
 </html>
