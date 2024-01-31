@@ -13,6 +13,7 @@
     </head>
     <body>
         <a href="change_password">Change Password</a>
+        <a href="create_user">Create Account</a>
         <a href="logout">Logout</a>
     </body>
 </html>

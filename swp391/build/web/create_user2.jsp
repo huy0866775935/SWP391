@@ -1,6 +1,6 @@
 <%-- 
-    Document   : home
-    Created on : Jan 24, 2024, 10:37:53 AM
+    Document   : create_use2
+    Created on : Jan 31, 2024, 9:21:19 AM
     Author     : huy08
 --%>
 
@@ -12,8 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <a href="change_password">Change Password</a>
-        <a href="create_user">Create Account</a>
-        <a href="logout">Logout</a>
+        <h1>Information For ${role}</h1>
     </body>
 </html>

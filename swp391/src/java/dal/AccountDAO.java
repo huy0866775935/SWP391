@@ -16,7 +16,7 @@ import model.Account;
 public class AccountDAO extends DBContext {
 
     public boolean checkUser(String username, String password) {
-        String sql = "Select * from [dbo].[Account] where UserName = ? and Password = ?";
+        String sql = "Select * from [dbo].[Account] where Email = ? and Password = ?";
         try {
             PreparedStatement st = connection.prepareCall(sql);
             st.setString(1, username);
@@ -34,7 +34,7 @@ public class AccountDAO extends DBContext {
     public boolean changePassword(String username, String password) {
         String sql = "UPDATE Account\n"
                 + "SET Password = ?\n"
-                + "WHERE UserName = ?;";
+                + "WHERE Email = ?;";
         try {
             PreparedStatement st = connection.prepareCall(sql);
             st.setString(1, password);

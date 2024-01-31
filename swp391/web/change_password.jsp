@@ -25,16 +25,20 @@
                 </div>
                 <div class="input_container">
                     <span>Password</span></br>
-                    <input type="password" name="old_Password"/>
+                    <input type="password" name="old_Password" required/>
                 </div>
                 <div class="input_container">
                     <span>New Password</span></br>
-                    <input type="password" name="new_Password"/>
+                    <input type="password" name="new_Password" required/>
                 </div>
                 <div class="input_container">
                     <span>Confirm Password</span></br>
-                    <input type="password"name="cf_Password"/>
+                    <input type="password"name="cf_Password" required/>
                 </div>
+                <% if(request.getAttribute("fail")!=null){
+                %>
+                <div style="color:red;margin-bottom: 10px" class="note">${fail}</br></div>
+                    <%}%>
                 <input type="submit" value="Change Password"/>
             </form>
 
