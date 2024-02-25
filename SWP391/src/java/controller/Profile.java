@@ -5,20 +5,27 @@
 
 package controller;
 
+import dal.StudentDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.Account;
+import model.Student;
 
 /**
  *
  * @author huy08
  */
-public class Logout extends HttpServlet {
-   
+public class Profile extends HttpServlet {
+       private final String STUDENT_PROFILE = "profile.jsp";
+
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      * @param request servlet request
@@ -34,10 +41,10 @@ public class Logout extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Logout</title>");  
+            out.println("<title>Servlet profile</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Logout at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet profile at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -55,13 +62,30 @@ public class Logout extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         
-        Cookie c_user = new Cookie("user", null);
-        Cookie c_pass = new Cookie("pass", null);        
-        c_user.setMaxAge(-1);
-        c_pass.setMaxAge(-1);
-        response.addCookie(c_pass);
-        response.addCookie(c_user);
-        response.sendRedirect("login");
+        StudentDAO dao = new StudentDAO();
+        HttpSession session =  request.getSession();
+        Account acc = (Account) session.getAttribute("account");
+        PrintWriter out = response.getWriter();
+        //out.print(acc.getID());
+        
+           try {
+               Student Info = dao.getStudentInfo(acc.getID());
+               //out.print(Info.getAccountID());
+               request.setAttribute("StudentID", Info.getStudentID());
+               request.setAttribute("Name", Info.getName());
+               request.setAttribute("Dob", Info.getDob());
+               request.setAttribute("Gender", Info.getGender());
+               request.setAttribute("Phone", Info.getPhone());
+               request.setAttribute("Address", Info.getAddress());
+               request.setAttribute("AccountID",Info.getAccountID());
+               request.setAttribute("Personal_ID", Info.getPersonal_ID());
+               request.setAttribute("P_Email", Info.getP_Email());
+               request.setAttribute("StartDate", Info.getStartDate());
+           } catch (SQLException ex) {
+               Logger.getLogger(Profile.class.getName()).log(Level.SEVERE, null, ex);
+           }
+        
+        request.getRequestDispatcher(STUDENT_PROFILE).forward(request, response);
     } 
 
     /** 
@@ -74,7 +98,7 @@ public class Logout extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+        request.getRequestDispatcher(STUDENT_PROFILE).forward(request, response);
     }
 
     /** 

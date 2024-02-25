@@ -22,7 +22,7 @@ import model.Account;
  */
 public class Login extends HttpServlet {
 
-    private final String HOME_PAGE = "home.jsp";
+    private final String HOME_PAGE = "home2.jsp";
     private final String LOGIN_PAGE = "login.jsp";
 
     /**
@@ -68,15 +68,21 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String remember = request.getParameter("remember");
         AccountDAO go = new AccountDAO();
         boolean result = go.checkUser(username, password);
-        Account loggedUser = new Account(username,password);
+        
+        Account loggedUser = go.getUser(username, password);
+        
+        
         if (result) {
+            
             HttpSession session = request.getSession();
             session.setAttribute("account", loggedUser);
+            //out.print(loggedUser.getUsername());
             if (remember != null) {
                 Cookie c_user = new Cookie("user", username);
                 Cookie c_pass = new Cookie("pass", password);
@@ -85,7 +91,7 @@ public class Login extends HttpServlet {
                 response.addCookie(c_user);
                 response.addCookie(c_pass);
             }
-            response.sendRedirect("home");
+            response.sendRedirect(HOME_PAGE);
         } else {
             request.setAttribute("fail", "Check your UserName or Password again!");
             request.getRequestDispatcher(LOGIN_PAGE).forward(request, response);
