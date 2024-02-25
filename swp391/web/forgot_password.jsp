@@ -36,16 +36,13 @@
                 <p>You can reset your Password here</p>
                 <div class="input-email">
                     <input type="text" class="passInput" placeholder="Email address">
-                </div>
-                
+                </div>                
                 <div class="input">
-                    <button class="bt"><a href="">Send My Password</a></button>
+                    <button class="bt"><a href="OTP_reveiver.jsp">Send OTP</a></button>
                     <button class="bt"><a href="login">Back To Login</a></button>
                 </div>
-                </div>
-               
-    
-                <div class="note">If you don’t recive new password, please try again after 20 seconds</div>
+                </div>                   
+                <div class="note">If you don’t recive OTP code, please try again after 20 seconds</div>
             
                 
                 

@@ -59,7 +59,9 @@ public class Change_Password extends HttpServlet {
         HttpSession session =  request.getSession();
         Account acc = (Account) session.getAttribute("account");
         request.setAttribute("username", acc.getUsername());
-        request.getRequestDispatcher("change_password.jsp").forward(request, response);
+        PrintWriter out = response.getWriter();
+        out.print(acc.getUsername());
+        //request.getRequestDispatcher("change_password.jsp").forward(request, response);
     } 
 
     /** 
@@ -83,6 +85,7 @@ public class Change_Password extends HttpServlet {
         HttpSession session =  request.getSession();
         Account acc = (Account) session.getAttribute("account");
         request.setAttribute("username", acc.getUsername());
+        out.print(acc.getUsername());
         if(!checked){            
             request.setAttribute("fail", "Sai mật khẩu!");
             request.getRequestDispatcher("change_password.jsp").forward(request, response);
@@ -93,7 +96,7 @@ public class Change_Password extends HttpServlet {
             request.getRequestDispatcher("change_password.jsp").forward(request, response);
 
         }
-        request.getRequestDispatcher("home").forward(request, response);
+       // request.getRequestDispatcher("home").forward(request, response);
 
         
     }

@@ -30,6 +30,22 @@ public class AccountDAO extends DBContext {
         }
         return false;
     }
+    public Account getUser(String username, String password) {
+        String sql = "Select * from [dbo].[Account] where Email = ? and Password = ?";
+        try {
+            PreparedStatement st = connection.prepareCall(sql);
+            st.setString(1, username);
+            st.setString(2, password);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                Account acc = new Account(rs.getString("AccountID"), rs.getString("Email"), rs.getString("Password"), rs.getString("Role"));
+                return acc;
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return null;
+    }
 
     public boolean changePassword(String username, String password) {
         String sql = "UPDATE Account\n"
