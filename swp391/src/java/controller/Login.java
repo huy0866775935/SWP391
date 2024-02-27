@@ -22,7 +22,7 @@ import model.Account;
  */
 public class Login extends HttpServlet {
 
-    private final String HOME_PAGE = "home2.jsp";
+    private final String HOME_PAGE = "home";
     private final String LOGIN_PAGE = "login.jsp";
 
     /**
@@ -82,7 +82,7 @@ public class Login extends HttpServlet {
             
             HttpSession session = request.getSession();
             session.setAttribute("account", loggedUser);
-            //out.print(loggedUser.getUsername());
+            //out.print(loggedUser.getRole());
             if (remember != null) {
                 Cookie c_user = new Cookie("user", username);
                 Cookie c_pass = new Cookie("pass", password);
@@ -91,6 +91,8 @@ public class Login extends HttpServlet {
                 response.addCookie(c_user);
                 response.addCookie(c_pass);
             }
+            
+            //request.getRequestDispatcher(HOME_PAGE).forward(request, response);
             response.sendRedirect(HOME_PAGE);
         } else {
             request.setAttribute("fail", "Check your UserName or Password again!");

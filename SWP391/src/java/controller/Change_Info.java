@@ -11,14 +11,12 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import model.Account;
 
 /**
  *
  * @author huy08
  */
-public class Home extends HttpServlet {
+public class Change_Info extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -32,16 +30,15 @@ public class Home extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            HttpSession session =  request.getSession();
-        Account acc = (Account) session.getAttribute("account");
-        request.setAttribute("role", acc.getRole());
-        
-        out.print(acc.getRole());
-        if(acc.getRole().equals('0')){
-            request.getRequestDispatcher("admin_home.jsp").forward(request, response);
-        } else
-                request.getRequestDispatcher("home.jsp").forward(request, response);
-
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet Change_Info</title>");  
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet Change_Info at " + request.getContextPath () + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     } 
 
@@ -56,16 +53,7 @@ public class Home extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        HttpSession session =  request.getSession();
-        Account acc = (Account) session.getAttribute("account");
-        request.setAttribute("role", acc.getRole());
-        PrintWriter out = response.getWriter();
-        out.print(acc.getRole());
-        if(acc.getRole().equals('0')){
-            request.getRequestDispatcher("admin_home.jsp").forward(request, response);
-        } else
-                request.getRequestDispatcher("home.jsp").forward(request, response);
-
+        
     } 
 
     /** 
@@ -78,16 +66,7 @@ public class Home extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        HttpSession session =  request.getSession();
-        Account acc = (Account) session.getAttribute("account");
-        request.setAttribute("role", acc.getRole());
-        PrintWriter out = response.getWriter();
-        out.print(acc.getRole());
-        if(acc.getRole().equals('0')){
-            request.getRequestDispatcher("admin_home.jsp").forward(request, response);
-        } else
-                request.getRequestDispatcher("home.jsp").forward(request, response);
-
+        processRequest(request, response);
     }
 
     /** 
