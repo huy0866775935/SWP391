@@ -3,26 +3,25 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/E:/Project/swp391/web/admin_home.jsp</file>
             <file>file:/E:/Project/swp391/src/java/controller/Home.java</file>
-            <file>file:/E:/Project/swp391/src/java/dal/DBContext.java</file>
-            <file>file:/E:/Project/swp391/web/forgot_password.jsp</file>
-            <file>file:/E:/Project/swp391/web/change_password.jsp</file>
+            <file>file:/E:/Project/swp391/src/java/controller/Admin_Home.java</file>
+            <file>file:/E:/Project/swp391/src/java/controller/Profile.java</file>
+            <file>file:/E:/Project/swp391/src/java/controller/Change_Info.java</file>
             <file>file:/E:/Project/swp391/web/index.html</file>
-            <file>file:/E:/Project/swp391/web/CSS/login.css</file>
+            <file>file:/E:/Project/swp391/web/profile.jsp</file>
             <file>file:/E:/Project/swp391/src/java/controller/Forgot_Password.java</file>
-            <file>file:/E:/Project/swp391/web/CSS/home2.css</file>
+            <file>file:/E:/Project/swp391/src/java/controller/Logout.java</file>
             <file>file:/E:/Project/swp391/web/login.jsp</file>
+            <file>file:/E:/Project/swp391/web/user_info.jsp</file>
             <file>file:/E:/Project/swp391/web/OTP_reveiver.jsp</file>
-            <file>file:/E:/Project/swp391/web/img/user-profile.png</file>
-            <file>file:/E:/Project/swp391/web/img/bg.jpg</file>
             <file>file:/E:/Project/swp391/web/home.jsp</file>
             <file>file:/E:/Project/swp391/web/WEB-INF/web.xml</file>
-            <file>file:/E:/Project/swp391/web/img/key.png</file>
-            <file>file:/E:/Project/swp391/web/create_user.jsp</file>
+            <file>file:/E:/Project/swp391/src/java/controller/Login.java</file>
+            <file>file:/E:/Project/swp391/src/java/dal/StudentDAO.java</file>
             <file>file:/E:/Project/swp391/src/java/dal/AccountDAO.java</file>
-            <file>file:/E:/Project/swp391/web/home2.jsp</file>
-            <file>file:/E:/Project/swp391/web/img/anime.jpg</file>
-            <file>file:/E:/Project/swp391/web/create_user2.jsp</file>
+            <file>file:/E:/Project/swp391/src/java/controller/Change_Password.java</file>
+            <file>file:/E:/Project/swp391/src/java/controller/Create_User.java</file>
         </group>
     </open-files>
 </project-private>
